@@ -1,4 +1,23 @@
+import { Default as TaskListDefaults } from '../../src/components/TaskList.stories'
+
 describe('The login page', () => {
+  beforeEach(() => {
+    cy.intercept('POST', '/authenticate', {
+      statusCode: 201,
+      body: {
+        user: {
+          name: 'Alice Carr',
+          token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9',
+        },
+      },
+    })
+
+    cy.intercept('GET', '/tasks', {
+      statusCode: 201,
+      body: TaskListDefaults.args,
+    })
+  })
+
   it('user can authenticate using the login from', () => {
     const email = 'alice.carr@example.com'
     const password = 'k12h1k0$5;lpa@Afn'
