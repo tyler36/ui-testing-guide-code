@@ -1,16 +1,22 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-const port = 5173
-const origin = `${process.env.DDEV_PRIMARY_URL}:${port}`
+let customConfig = {
+  plugins: [react()],
+}
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  server: {
+if (process.env.DDEV_PRIMARY_URL) {
+  const port = 5173
+  const origin = `${process.env.DDEV_PRIMARY_URL}:${port}`
+
+  customConfig.server = {
     host: '0.0.0.0',
     port: port,
     origin: origin,
     strictPort: true,
-  },
-  plugins: [react()],
-})
+  }
+}
+
+
+// https://vitejs.dev/config/
+export default defineConfig(customConfig)
