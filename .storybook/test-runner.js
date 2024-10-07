@@ -5,11 +5,17 @@ module.exports = {
     await injectAxe(page)
   },
   async postVisit(page) {
-    await checkA11y(page, '#storybook-root', {
-      detailedReport: true,
-      detailedReportOptions: {
-        html: true,
+    await checkA11y(
+      page,
+      '#storybook-root',
+      {
+        detailedReport: true,
+        detailedReportOptions: {
+          html: true,
+        },
       },
-    })
+      true,
+      'v2',
+    )
   },
 }
