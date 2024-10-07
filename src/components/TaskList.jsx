@@ -6,11 +6,13 @@ export default function TaskList({
   onTogglePinTask,
   onArchiveTask,
   onEditTitle,
+  onDeleteTask,
 }) {
   const events = {
     onTogglePinTask,
     onArchiveTask,
     onEditTitle,
+    onDeleteTask,
   }
 
   const LoadingRow = (
@@ -69,4 +71,9 @@ TaskList.propTypes = {
   onTogglePinTask: PropTypes.func.isRequired,
   onArchiveTask: PropTypes.func.isRequired,
   onEditTitle: PropTypes.func.isRequired,
+  onDeleteTask: PropTypes.func.isRequired,
+}
+
+TaskList.defaultProps = {
+  loading: false,
 }
