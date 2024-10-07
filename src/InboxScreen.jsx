@@ -49,6 +49,7 @@ export default function InboxScreen({ error }) {
     </div>
   )
 }
+
 InboxScreen.propTypes = {
   error: PropTypes.string,
 }
