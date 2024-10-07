@@ -19,8 +19,10 @@
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
+    "storybook:ci": "storybook dev -p 6006 --ci",
     "build-storybook": "storybook build",
     "test-storybook": "test-storybook",
+    "test-storybook:ddev": "test-storybook",
     "cypress": "cypress open",
     "init-msw": "msw init public/"
   },
