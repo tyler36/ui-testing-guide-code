@@ -1,0 +1,9 @@
+name: storybook
+repository: tyler36/ddev-storybook
+version: "0.2"
+install_date: "2024-10-07T12:49:05+09:00"
+project_files:
+    - config.storybook.yaml
+    - commands/host/storybook
+global_files: []
+removal_actions: []
